@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 	public float jumpSpeed = 100.0f;
 	public float runSpeed = 5.0f;
     public bool isDead = false;
+    public bool hasWon = false;
 
 	private Rigidbody2D rb2d;
 
@@ -18,11 +19,11 @@ public class Player : MonoBehaviour
 
 	void Update () 
 	{
-        if (isDead == false)
+        if (isDead||hasWon == false)
         {
             transform.Translate(runSpeed * Time.deltaTime, 0f, 0f);
         }
-		if(isDead == false && Input.GetKeyDown(KeyCode.UpArrow))
+		if(isDead||hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
           
 		{
 			rb2d.AddForce(Vector2.up * jumpSpeed);
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Goal")
         {
             Debug.Log("You win!");
-            isDead = true;
+            hasWon = true;
 
         }
     }
