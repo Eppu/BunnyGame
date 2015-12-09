@@ -6,7 +6,7 @@ public class DieScript : MonoBehaviour
 
     public float targetScale = 1.0f;
     public float shrinkSpeed = 10.0f;
-    public bool shrinking;
+    //public bool shrinking;
     public GameObject splat;
 
     void Update()

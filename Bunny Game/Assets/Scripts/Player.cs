@@ -12,28 +12,30 @@ public class Player : MonoBehaviour
 	private Rigidbody2D rb2d;
 
 
-	void Start ()
+	void Start()
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D> ();
 	}
 
-	void Update () 
+	void Update() 
 	{
-        if (isDead||hasWon == false)
+        if (isDead == false && hasWon == false)
         {
-            transform.Translate(runSpeed * Time.deltaTime, 0f, 0f);
+            UpdatePlayerPosition();
         }
-		if(isDead||hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
+		if(isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
           
 		{
-			rb2d.AddForce(Vector2.up * jumpSpeed);
+            PlayerJump();
 		}
+
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Trap")
         {
+            Debug.Log("You died...");
             isDead = true;
         }
         if (collision.gameObject.tag == "Goal")
@@ -42,6 +44,16 @@ public class Player : MonoBehaviour
             hasWon = true;
 
         }
+    }
+
+    void UpdatePlayerPosition()
+    {
+        transform.Translate(runSpeed * Time.deltaTime, 0f, 0f);
+    }
+
+    void PlayerJump()
+    {
+        rb2d.AddForce(Vector2.up * jumpSpeed);
     }
 
 }
