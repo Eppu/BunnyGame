@@ -6,16 +6,21 @@ public class Player : MonoBehaviour
 
 	public float jumpSpeed = 100.0f;
 	public float runSpeed = 5.0f;
+    public float width = 5.0f;
     public bool isDead = false;
     public bool hasWon = false;
 
-	private Rigidbody2D rb2d;
+    Transform backFoot;
+
+    private Rigidbody2D rb2d;
+
 
 
 	void Start()
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D> ();
-	}
+        backFoot = transform.FindChild("BackFoot").transform;
+    }
 
 	void Update() 
 	{
@@ -23,11 +28,14 @@ public class Player : MonoBehaviour
         {
             UpdatePlayerPosition();
         }
-		if(isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
-          
-		{
-            PlayerJump();
-		}
+
+        if (IsGrounded())
+        {
+            if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                PlayerJump();
+            }
+        }
 
 	}
 
@@ -37,6 +45,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("You died...");
             isDead = true;
+            rb2d.isKinematic = true;
         }
         if (collision.gameObject.tag == "Goal")
         {
@@ -46,6 +55,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     void UpdatePlayerPosition()
     {
         transform.Translate(runSpeed * Time.deltaTime, 0f, 0f);
@@ -54,6 +64,25 @@ public class Player : MonoBehaviour
     void PlayerJump()
     {
         rb2d.AddForce(Vector2.up * jumpSpeed);
+    }
+
+    bool IsGrounded()
+    {
+        RaycastHit2D[] hits = Physics2D.RaycastAll(backFoot.position, Vector2.right, width);
+
+        Debug.DrawLine(backFoot.position,
+                       backFoot.position + Vector3.right * width,
+                       Color.red);
+
+        for (int i = 0; i < hits.Length; ++i)
+        {
+            if (hits[i].transform.tag == "Ground")
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 }
