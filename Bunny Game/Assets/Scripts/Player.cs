@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Player : MonoBehaviour 
@@ -9,6 +10,10 @@ public class Player : MonoBehaviour
     public float width = 5.0f;
     public bool isDead = false;
     public bool hasWon = false;
+    public bool hasFallen = false;
+    public Text deathCount;
+
+    static int timesDied = 0;
 
     Transform backFoot;
 
@@ -36,7 +41,6 @@ public class Player : MonoBehaviour
                 PlayerJump();
             }
         }
-
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -46,12 +50,23 @@ public class Player : MonoBehaviour
             Debug.Log("You died...");
             isDead = true;
             rb2d.isKinematic = true;
+            timesDied++;
+            Debug.Log(timesDied);
+            deathCount.text = "Retry Count: " + timesDied.ToString();
         }
         if (collision.gameObject.tag == "Goal")
         {
             Debug.Log("You win!");
             hasWon = true;
+        }
+    }
 
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "Detector")
+        {
+            hasFallen = true;
+            Debug.Log("You hit the pit detector!");
         }
     }
 
