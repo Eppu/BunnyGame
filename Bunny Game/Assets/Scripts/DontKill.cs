@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DontKill : MonoBehaviour {
-
-	
-	void Awake ()
+public class DontKill : MonoBehaviour
+{
+    public void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
-    }
-	
+        DontDestroyOnLoad(this);
 
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

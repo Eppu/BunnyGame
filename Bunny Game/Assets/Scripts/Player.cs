@@ -11,9 +11,7 @@ public class Player : MonoBehaviour
     public bool isDead = false;
     public bool hasWon = false;
     public bool hasFallen = false;
-    public Text deathCount;
-
-    static int timesDied = 0;
+    public GameObject gameManager;
 
     Transform backFoot;
 
@@ -25,6 +23,7 @@ public class Player : MonoBehaviour
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D> ();
         backFoot = transform.FindChild("BackFoot").transform;
+        gameManager = GameObject.Find("PointsManager");
     }
 
 	void Update() 
@@ -48,11 +47,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Trap")
         {
             Debug.Log("You died...");
-            isDead = true;
+            DieMe();
+            
             rb2d.isKinematic = true;
-            timesDied++;
-            Debug.Log(timesDied);
-            deathCount.text = "Retry Count: " + timesDied.ToString();
+
         }
         if (collision.gameObject.tag == "Goal")
         {
@@ -74,6 +72,17 @@ public class Player : MonoBehaviour
     void UpdatePlayerPosition()
     {
         transform.Translate(runSpeed * Time.deltaTime, 0f, 0f);
+    }
+
+    void DieMe()
+    {
+        if (!isDead)
+        {
+            if (gameManager.GetComponent<RetryCounter>() )
+                gameManager.GetComponent<RetryCounter>().IncrementDeathCounter() ;
+        }
+        isDead = true;
+
     }
 
     void PlayerJump()
