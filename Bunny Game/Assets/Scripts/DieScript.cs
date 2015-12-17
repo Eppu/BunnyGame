@@ -21,6 +21,10 @@ public class DieScript : MonoBehaviour
             {
                 Application.LoadLevel(Application.loadedLevel);
             }
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                Application.LoadLevel("mainmenu");
+            }
         }
     }
 

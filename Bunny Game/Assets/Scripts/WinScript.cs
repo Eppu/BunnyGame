@@ -19,6 +19,10 @@ public class WinScript : MonoBehaviour
             {
                 Application.LoadLevel(Application.loadedLevel);
             }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Application.LoadLevel("mainmenu");
+            }
         }
     }
 
