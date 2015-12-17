@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public bool hasWon = false;
     public bool hasFallen = false;
     public GameObject gameManager;
+    public Camera main;
 
     Transform backFoot;
 
@@ -105,7 +106,6 @@ public class Player : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
