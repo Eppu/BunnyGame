@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     public GameObject gameManager;
     public Camera main;
     Animator anim;
+    public AudioSource[] sounds;
+    public AudioSource noise1;
+    public AudioSource noise2;
 
     Transform backFoot;
 
@@ -22,12 +25,15 @@ public class Player : MonoBehaviour
 
 
 
-	void Start()
-	{
-		rb2d = gameObject.GetComponent<Rigidbody2D> ();
+    void Start()
+    {
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
         backFoot = transform.FindChild("BackFoot").transform;
         gameManager = GameObject.Find("PointsManager");
         anim = GetComponent<Animator>();
+        sounds = GetComponents<AudioSource>();
+        noise1 = sounds[0];
+        noise2 = sounds[1];
     }
 
 	void Update() 
@@ -57,6 +63,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Trap")
         {
+            noise1.Play();
             Debug.Log("You died...");
             DieMe();
             
@@ -65,6 +72,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Goal")
         {
+            noise2.Play();
             Debug.Log("You win!");
             hasWon = true;
         }
