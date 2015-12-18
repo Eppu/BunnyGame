@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
 
 	public float jumpSpeed = 100.0f;
 	public float runSpeed = 5.0f;
+    public float rotateSpeed = 3.0f;
     public float width = 5.0f;
     public bool isDead = false;
     public bool hasWon = false;
     public bool hasFallen = false;
     public GameObject gameManager;
     public Camera main;
+    Animator anim;
 
     Transform backFoot;
 
@@ -25,12 +27,14 @@ public class Player : MonoBehaviour
 		rb2d = gameObject.GetComponent<Rigidbody2D> ();
         backFoot = transform.FindChild("BackFoot").transform;
         gameManager = GameObject.Find("PointsManager");
+        anim = GetComponent<Animator>();
     }
 
 	void Update() 
 	{
         if (isDead == false && hasWon == false)
         {
+            anim.SetInteger("Direction", 1);
             UpdatePlayerPosition();
         }
 
@@ -39,8 +43,14 @@ public class Player : MonoBehaviour
             if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 PlayerJump();
+          
             }
         }
+        else
+        {
+            anim.SetInteger("Direction", 0);
+        }
+
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
