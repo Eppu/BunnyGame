@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public AudioSource[] sounds;
     public AudioSource noise1;
     public AudioSource noise2;
+    public AudioSource noise3;
 
     Transform backFoot;
 
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         sounds = GetComponents<AudioSource>();
         noise1 = sounds[0];
         noise2 = sounds[1];
+        noise3 = sounds[2];
     }
 
 	void Update() 
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour
         {
             noise1.Play();
             Debug.Log("You died...");
+            noise3.Stop();
             DieMe();
             
             rb2d.isKinematic = true;
