@@ -12,6 +12,7 @@ public class PlayerMenu : MonoBehaviour
     public bool isDead = false;
     public bool hasWon = false;
     public bool hasFallen = false;
+    public bool facingRight = true;
     public GameObject gameManager;
     public Camera main;
     Animator anim;
@@ -40,44 +41,43 @@ public class PlayerMenu : MonoBehaviour
 
     void Update()
     {
-        if (isDead == false && hasWon == false)
+        anim.SetInteger("Direction", 0);
+
+        if (Input.GetKey(KeyCode.RightArrow))
         {
+            transform.Translate(Vector2.right * runSpeed * Time.deltaTime);
             anim.SetInteger("Direction", 1);
-            UpdatePlayerPosition();
+            facingRight = true;
         }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector2.left * runSpeed * Time.deltaTime);
+            anim.SetInteger("Direction", 2);
+            facingRight = false;
+        }
+
 
         if (IsGrounded())
         {
-            if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
+            if (isDead == false && hasWon == false && facingRight == true && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 PlayerJump();
-
+                //anim.setInteger("Direction", joku);
             }
         }
-        else
-        {
-            anim.SetInteger("Direction", 0);
-        }
 
-    }
+        }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Trap")
+        if (collision.gameObject.tag == "Play")
         {
-            noise1.Play();
-            Debug.Log("You died...");
-            noise3.Stop();
-            DieMe();
-
-            rb2d.isKinematic = true;
+            Application.LoadLevel("runner");
 
         }
-        if (collision.gameObject.tag == "Goal")
+        if (collision.gameObject.tag == "Credits")
         {
-            noise2.Play();
-            Debug.Log("You win!");
-            hasWon = true;
+            Application.LoadLevel("credits");
         }
     }
 
@@ -91,10 +91,6 @@ public class PlayerMenu : MonoBehaviour
     }
 
 
-    void UpdatePlayerPosition()
-    {
-        transform.Translate(runSpeed * Time.deltaTime, 0f, 0f);
-    }
 
     void DieMe()
     {
