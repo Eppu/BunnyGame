@@ -3,20 +3,11 @@ using System.Collections;
 
 public class LevelSelect : MonoBehaviour
 {
+    public float speed = 0.2f;
 
-    // Use this for initialization
-    void Start ()
-    {
 
-    }
-	
-	// Update is called once per frame
 	void Update ()
     {
-	    //if(Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    Application.LoadLevel("runner");
-        //}
-
+        transform.position = new Vector3(transform.position.x, 2 + Mathf.Sin(Time.time * speed), transform.position.z);
     }
 }

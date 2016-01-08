@@ -283,7 +283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .319999993
+      value: .314999998
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -454,7 +454,7 @@ Transform:
   m_PrefabInternal: {fileID: 1256850576}
   m_GameObject: {fileID: 172619345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.0499992, y: .319999993, z: 0}
+  m_LocalPosition: {x: 16.0499992, y: .314999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -765,7 +765,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .319999993
+      value: .314999998
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -815,7 +815,7 @@ GameObject:
   - 212: {fileID: 452855102}
   - 61: {fileID: 452855101}
   m_Layer: 0
-  m_Name: Spike (25)
+  m_Name: Spike (22)
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,7 +868,7 @@ Transform:
   m_PrefabInternal: {fileID: 1131425999}
   m_GameObject: {fileID: 452855100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.9300003, y: .319999993, z: 0}
+  m_LocalPosition: {x: 48.9300003, y: .314999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -967,7 +967,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .319999993
+      value: .314999998
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1181,7 +1181,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .319999993
+      value: .314999998
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1311,7 +1311,7 @@ Transform:
   m_PrefabInternal: {fileID: 495277284}
   m_GameObject: {fileID: 604619072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.3799992, y: .319999993, z: 0}
+  m_LocalPosition: {x: 17.3799992, y: .314999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1327,7 +1327,7 @@ GameObject:
   - 212: {fileID: 660334664}
   - 61: {fileID: 660334663}
   m_Layer: 0
-  m_Name: Spike (24)
+  m_Name: Spike (22)
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1380,7 +1380,7 @@ Transform:
   m_PrefabInternal: {fileID: 580120928}
   m_GameObject: {fileID: 660334662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.9300003, y: .319999993, z: 0}
+  m_LocalPosition: {x: 43.9300003, y: .314999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2529,7 +2529,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .319999993
+      value: .314999998
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2690,7 +2690,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .319999993
+      value: .314999998
       objectReference: {fileID: 0}
     - target: {fileID: 425616, guid: fcda63470640ca348a51e4a189dec61a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2849,7 +2849,7 @@ GameObject:
   - 212: {fileID: 1489676518}
   - 61: {fileID: 1489676517}
   m_Layer: 0
-  m_Name: Spike (23)
+  m_Name: Spike (22)
   m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2902,7 +2902,7 @@ Transform:
   m_PrefabInternal: {fileID: 139930300}
   m_GameObject: {fileID: 1489676516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.6300011, y: .319999993, z: 0}
+  m_LocalPosition: {x: 42.6300011, y: .314999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3558,7 +3558,7 @@ Transform:
   m_PrefabInternal: {fileID: 409399765}
   m_GameObject: {fileID: 1850451459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.05000019, y: .319999993, z: 0}
+  m_LocalPosition: {x: 8.05000019, y: .314999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
