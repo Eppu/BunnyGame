@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Player : MonoBehaviour 
 {
-
 	public float jumpSpeed = 100.0f;
 	public float runSpeed = 5.0f;
     public float rotateSpeed = 3.0f;
@@ -23,8 +22,6 @@ public class Player : MonoBehaviour
     Transform backFoot;
 
     private Rigidbody2D rb2d;
-
-
 
     void Start()
     {
@@ -45,20 +42,17 @@ public class Player : MonoBehaviour
             anim.SetInteger("Direction", 1);
             UpdatePlayerPosition();
         }
-
         if (IsGrounded())
         {
             if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
             {
-                PlayerJump();
-          
+                PlayerJump();   
             }
         }
         else
         {
             anim.SetInteger("Direction", 0);
         }
-
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -68,10 +62,8 @@ public class Player : MonoBehaviour
             noise1.Play();
             Debug.Log("You died...");
             noise3.Stop();
-            DieMe();
-            
+            DieMe();  
             rb2d.isKinematic = true;
-
         }
         if (collision.gameObject.tag == "Goal")
         {
@@ -89,7 +81,6 @@ public class Player : MonoBehaviour
             Debug.Log("You hit the pit detector!");
         }
     }
-
 
     void UpdatePlayerPosition()
     {

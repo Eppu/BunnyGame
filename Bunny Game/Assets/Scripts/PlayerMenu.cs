@@ -16,10 +16,7 @@ public class PlayerMenu : MonoBehaviour
     public GameObject gameManager;
     public Camera main;
     Animator anim;
-    public AudioSource[] sounds;
-    public AudioSource noise1;
-    public AudioSource noise2;
-    public AudioSource noise3;
+
 
     Transform backFoot;
 
@@ -33,16 +30,12 @@ public class PlayerMenu : MonoBehaviour
         backFoot = transform.FindChild("BackFoot").transform;
         gameManager = GameObject.Find("PointsManager");
         anim = GetComponent<Animator>();
-        sounds = GetComponents<AudioSource>();
-        noise1 = sounds[0];
-        noise2 = sounds[1];
-        noise3 = sounds[2];
+
     }
 
     void Update()
     {
         anim.SetInteger("Direction", 0);
-
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector2.right * runSpeed * Time.deltaTime);
