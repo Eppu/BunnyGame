@@ -14,8 +14,9 @@ public class PlayerMenu : MonoBehaviour
     public bool hasFallen = false;
     public bool facingRight = true;
     public GameObject gameManager;
-    public Camera main;
+    public Camera mainCam;
     Animator anim;
+    Animator camAnim;
 
 
     Transform backFoot;
@@ -30,6 +31,7 @@ public class PlayerMenu : MonoBehaviour
         backFoot = transform.FindChild("BackFoot").transform;
         gameManager = GameObject.Find("PointsManager");
         anim = GetComponent<Animator>();
+        camAnim = mainCam.GetComponent<Animator>();
 
     }
 
@@ -41,12 +43,14 @@ public class PlayerMenu : MonoBehaviour
             transform.Translate(Vector2.right * runSpeed * Time.deltaTime);
             anim.SetInteger("Direction", 1);
             facingRight = true;
+            Debug.Log(facingRight);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector2.left * runSpeed * Time.deltaTime);
             anim.SetInteger("Direction", 2);
             facingRight = false;
+            Debug.Log(facingRight);
         }
 
 
@@ -66,20 +70,20 @@ public class PlayerMenu : MonoBehaviour
         if (collision.gameObject.tag == "Play")
         {
             Application.LoadLevel("runner");
-
-        }
-        if (collision.gameObject.tag == "Credits")
-        {
-            Application.LoadLevel("credits");
         }
     }
 
     void OnTriggerEnter2D(Collider2D trigger)
     {
-        if (trigger.gameObject.tag == "Detector")
+        if (trigger.gameObject.tag == "Credits" && !facingRight)
         {
-            hasFallen = true;
-            Debug.Log("You hit the pit detector!");
+            camAnim.Play("CamMovement");
+            Debug.Log("You hit the Credit trigger from the right!");
+        }
+        else if (trigger.gameObject.tag == "Credits" && facingRight)
+        {
+            camAnim.Play("CamReverse");
+            Debug.Log("You hit the Credit trigger from the left!");
         }
     }
 

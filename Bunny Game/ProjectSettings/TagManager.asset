@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Detector
   - Play
+  - Credits
   layers:
   - Default
   - TransparentFX
