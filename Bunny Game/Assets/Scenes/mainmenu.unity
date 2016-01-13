@@ -1320,7 +1320,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 40
+      scalar: 50
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1353,7 +1353,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 1.5
+      scalar: 1.50000048
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1368,7 +1368,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .333333343
+          value: .333333224
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2618,7 +2618,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .289999992, y: 3.76999998}
+  m_Size: {x: .0599999987, y: 3.76999998}
 --- !u!4 &1880933389
 Transform:
   m_ObjectHideFlags: 0
