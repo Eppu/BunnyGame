@@ -18,7 +18,6 @@ public class PlayerMenu : MonoBehaviour
     Animator anim;
     Animator camAnim;
 
-
     Transform backFoot;
 
     private Rigidbody2D rb2d;
@@ -52,18 +51,18 @@ public class PlayerMenu : MonoBehaviour
             facingRight = false;
             Debug.Log(facingRight);
         }
-
-
         if (IsGrounded())
         {
-            if (isDead == false && hasWon == false && facingRight == true && Input.GetKeyDown(KeyCode.UpArrow))
+            if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 PlayerJump();
-                //anim.setInteger("Direction", joku);
             }
         }
-
+        if(!IsGrounded())
+        {
+            anim.SetInteger("Direction", 4);
         }
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {

@@ -3,10 +3,10 @@ using System.Collections;
 
 public class WinScript : MonoBehaviour
 {
-
     public float targetScale = 1.0f;
     public float shrinkSpeed = 10.0f;
     public GameObject win;
+    public string levelName;
 
     void Update()
     {
@@ -21,12 +21,12 @@ public class WinScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                Application.LoadLevel(levelName);
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
                 Application.LoadLevel("mainmenu");
             }
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    Application.LoadLevel("mainmenu");
-            //}
         }
     }
 

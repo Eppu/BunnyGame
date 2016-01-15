@@ -4,7 +4,6 @@ using System.Collections;
 
 public class DieScript : MonoBehaviour
 {
-
     public float targetScale = 1.0f;
     public float shrinkSpeed = 10.0f;
     //public bool shrinking;
@@ -21,14 +20,10 @@ public class DieScript : MonoBehaviour
             {
                 Application.LoadLevel(Application.loadedLevel);
             }
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
                 Application.LoadLevel("mainmenu");
             }
-            //if(Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    Application.LoadLevel("mainmenu");
-            //}
         }
     }
 

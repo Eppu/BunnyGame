@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/mainmenu.unity
   - enabled: 1
     path: Assets/Scenes/runner.unity
+  - enabled: 1
+    path: Assets/Scenes/runner2.unity
+  - enabled: 1
+    path: Assets/Scenes/runner3.unity
