@@ -22,10 +22,17 @@ public class Player : MonoBehaviour
     Transform backFoot;
 
     private Rigidbody2D rb2d;
+    BoxCollider2D playerCollider;
+
+    public float jumpX;
+    public float jumpY;
+    public float runX;
+    public float runY;
 
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
+        playerCollider = gameObject.GetComponent<BoxCollider2D>();
         backFoot = transform.FindChild("BackFoot").transform;
         gameManager = GameObject.Find("PointsManager");
         anim = GetComponent<Animator>();
@@ -41,6 +48,7 @@ public class Player : MonoBehaviour
         {
             anim.SetInteger("Direction", 1);
             UpdatePlayerPosition();
+            //playerCollider.offset = new Vector2(runX, runY);
         }
         if (IsGrounded())
         {
@@ -52,6 +60,7 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetInteger("Direction", 0);
+           //playerCollider.offset = new Vector2(jumpX, jumpY);
         }
 	}
 
