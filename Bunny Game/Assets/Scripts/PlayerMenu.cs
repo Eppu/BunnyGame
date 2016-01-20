@@ -17,6 +17,9 @@ public class PlayerMenu : MonoBehaviour
     public Camera mainCam;
     Animator anim;
     Animator camAnim;
+    Animator balloonAnim;
+    Animator balloonAnim2;
+    Animator balloonAnim3;
 
     Transform backFoot;
 
@@ -31,6 +34,9 @@ public class PlayerMenu : MonoBehaviour
         gameManager = GameObject.Find("PointsManager");
         anim = GetComponent<Animator>();
         camAnim = mainCam.GetComponent<Animator>();
+        balloonAnim = GameObject.Find("LevelPlatform").GetComponent<Animator>();
+        balloonAnim2 = GameObject.Find("LevelPlatform2").GetComponent<Animator>();
+        balloonAnim3 = GameObject.Find("LevelPlatform3").GetComponent<Animator>();
 
     }
 
@@ -70,6 +76,14 @@ public class PlayerMenu : MonoBehaviour
         {
             Application.LoadLevel("runner");
         }
+        if (collision.gameObject.tag == "Play2")
+        {
+            Application.LoadLevel("runner2");
+        }
+        if (collision.gameObject.tag == "Play3")
+        {
+            Application.LoadLevel("runner3");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D trigger)
@@ -84,11 +98,35 @@ public class PlayerMenu : MonoBehaviour
             camAnim.Play("CamReverse");
             Debug.Log("You hit the Credit trigger from the left!");
         }
+        if (trigger.gameObject.tag == "Credits2" && !facingRight)
+        {
+            camAnim.Play("CamMovement2");
+            Debug.Log("You hit the Credit2 trigger from the right!");
+        }
+        else if (trigger.gameObject.tag == "Credits2" && facingRight)
+        {
+            camAnim.Play("CamReverse2");
+            Debug.Log("You hit the Credit2 trigger from the left!");
+        }
+        if (trigger.gameObject.tag == "Balloon")
+        {
+            balloonAnim.Play("Balloon1Rise");
+
+        }
+        if (trigger.gameObject.tag == "Balloon2")
+        {
+            balloonAnim2.Play("Balloon2Rise");
+
+        }
+        if (trigger.gameObject.tag == "Balloon3")
+        {
+            balloonAnim3.Play("Balloon3Rise");
+
+        }
     }
 
 
-
-    void DieMe()
+        void DieMe()
     {
         if (!isDead)
         {

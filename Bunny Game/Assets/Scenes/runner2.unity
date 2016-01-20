@@ -2883,7 +2883,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5782b68e384e8b54f82693f163ed7a81, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe5090634c9a8514d8cd43594d779a38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &872029771
 Prefab:
@@ -3815,12 +3815,19 @@ MonoBehaviour:
   isDead: 0
   hasWon: 0
   hasFallen: 0
-  gameManager: {fileID: 2060771346}
+  gameManager: {fileID: 0}
   main: {fileID: 0}
-  sounds: []
+  sounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   noise1: {fileID: 0}
   noise2: {fileID: 0}
   noise3: {fileID: 0}
+  jumpX: 1.20000005
+  jumpY: 1.52999997
+  runX: 1.48000002
+  runY: 1.52999997
 --- !u!50 &997741289
 Rigidbody2D:
   serializedVersion: 2
@@ -7365,7 +7372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 9573a8752bffccd40877f7dd84f0c92c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f3046b7f161f4d4da28aac8333f191e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2106254732
 GameObject:

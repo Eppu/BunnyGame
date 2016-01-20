@@ -10,6 +10,12 @@ TagManager:
   - Detector
   - Play
   - Credits
+  - Credits2
+  - Balloon
+  - Play2
+  - Play3
+  - Balloon2
+  - Balloon3
   layers:
   - Default
   - TransparentFX

@@ -48,11 +48,11 @@ public class Player : MonoBehaviour
         {
             anim.SetInteger("Direction", 1);
             UpdatePlayerPosition();
-            //playerCollider.offset = new Vector2(runX, runY);
+            playerCollider.size = new Vector2(runX, runY);
         }
         if (IsGrounded())
         {
-            if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
+            if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 PlayerJump();   
             }
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetInteger("Direction", 0);
-           //playerCollider.offset = new Vector2(jumpX, jumpY);
+           playerCollider.size = new Vector2(jumpX, jumpY);
         }
 	}
 
