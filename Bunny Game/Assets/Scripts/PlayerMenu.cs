@@ -111,17 +111,17 @@ public class PlayerMenu : MonoBehaviour
         if (trigger.gameObject.tag == "Balloon")
         {
             balloonAnim.Play("Balloon1Rise");
-
+            this.gameObject.transform.parent = GameObject.Find("BalloonCollider").transform;
         }
         if (trigger.gameObject.tag == "Balloon2")
         {
             balloonAnim2.Play("Balloon2Rise");
-
+            this.gameObject.transform.parent = GameObject.Find("BalloonCollider2").transform;
         }
         if (trigger.gameObject.tag == "Balloon3")
         {
             balloonAnim3.Play("Balloon3Rise");
-
+            this.gameObject.transform.parent = GameObject.Find("BalloonCollider3").transform;
         }
     }
 

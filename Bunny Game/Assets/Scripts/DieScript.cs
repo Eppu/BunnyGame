@@ -16,7 +16,7 @@ public class DieScript : MonoBehaviour
             splat.transform.localScale = Vector3.Lerp(splat.transform.localScale,
             new Vector3(targetScale, targetScale, targetScale), Time.deltaTime * shrinkSpeed);
             
-            if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Return) ||Input.GetKeyDown(KeyCode.Space))
             {
                 Application.LoadLevel(Application.loadedLevel);
             }

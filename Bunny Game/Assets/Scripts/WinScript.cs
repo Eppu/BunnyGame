@@ -15,11 +15,7 @@ public class WinScript : MonoBehaviour
             win.transform.localScale = Vector3.Lerp(win.transform.localScale,
             new Vector3(targetScale, targetScale, targetScale), Time.deltaTime * shrinkSpeed);
 
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Application.LoadLevel(Application.loadedLevel);
-            }
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R)) 
             {
                 Application.LoadLevel(levelName);
             }
