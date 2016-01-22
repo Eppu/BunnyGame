@@ -43,14 +43,14 @@ public class PlayerMenu : MonoBehaviour
     void Update()
     {
         anim.SetInteger("Direction", 0);
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector2.right * runSpeed * Time.deltaTime);
             anim.SetInteger("Direction", 1);
             facingRight = true;
             Debug.Log(facingRight);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector2.left * runSpeed * Time.deltaTime);
             anim.SetInteger("Direction", 2);
@@ -59,7 +59,7 @@ public class PlayerMenu : MonoBehaviour
         }
         if (IsGrounded())
         {
-            if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow))
+            if (isDead == false && hasWon == false && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 PlayerJump();
             }

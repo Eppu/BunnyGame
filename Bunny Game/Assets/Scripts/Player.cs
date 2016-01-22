@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
             noise3.Stop();
             DieMe();  
             rb2d.isKinematic = true;
+            anim.enabled = false;
         }
         if (collision.gameObject.tag == "Goal")
         {
